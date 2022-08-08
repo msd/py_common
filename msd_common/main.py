@@ -3,7 +3,6 @@ import re
 from re import Match
 from typing import Callable
 
-
 def transform_file_text(file_path, transform_function):
     p = Path(file_path)
     old_text = p.read_text()
