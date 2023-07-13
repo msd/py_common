@@ -15,7 +15,7 @@ setup(
     version="0.0.1",
     author="msd",
     author_email="87383399+msd@users.noreply.github.com",
-    description="common functions and classes used by msd",
+    description="stuff I use all the time",
     # license = "BSD",
     # keywords = "example documentation tutorial",
     install_requires=["requests", "brotli", "bs4", "lxml"],

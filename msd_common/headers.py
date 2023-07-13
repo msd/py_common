@@ -28,3 +28,17 @@ FF_HEADERS_SEC_FETCH_CROSS = {
     "Sec-Fetch-Site": "cross-site",
     "Sec-Fetch-User": "?1",
 }
+
+try:
+    import requests
+
+    __REQUESTS_INSTALLED = True
+except ImportError:
+    __REQUESTS_INSTALLED = False
+
+if __REQUESTS_INSTALLED:
+
+    def ff_session():
+        session = requests.session()
+        session.headers.update(FF_HEADERS)
+        return session
