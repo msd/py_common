@@ -16,6 +16,7 @@ setup(
     description = "common functions and classes used by msd",
     # license = "BSD",
     # keywords = "example documentation tutorial",
+    install_requires = ["requests", "brotli", "bs4", "lxml"]
     url = "https://github.com/msd/my_common",
     packages=["msd_common"],
     long_description=read('readme')

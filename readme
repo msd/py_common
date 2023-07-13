@@ -1,1 +1,11 @@
 Just some code that I find useful and can be potentially be used in many of my projects
+
+Webpage
+    Lazy HTML and BeautifulSoup
+    Accepts an optional requests.Session
+
+    TODO: write to a file
+
+download_file
+    Download a file using requests
+
