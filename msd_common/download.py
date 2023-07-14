@@ -1,6 +1,11 @@
 from enum import Enum, auto
 from pathlib import Path
 
+from requests import Session
+import requests
+
+from .url import name_from_url
+
 
 def _write_response_to_file(response: requests.Response, out_path: Path):
     with out_path.open("wb") as f:
