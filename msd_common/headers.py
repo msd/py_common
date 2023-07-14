@@ -35,14 +35,14 @@ try:
 except ImportError:
     _requests = None
 
+
+def ff_session():  # type: ignore
+    raise FileNotFoundError("requests library is not installed")
+
+
 if _requests is not None:
 
     def ff_session():
         session = _requests.session()
         session.headers.update(FF_HEADERS)
         return session
-
-else:
-
-    def ff_session():
-        raise FileNotFoundError("requests library is not installed")

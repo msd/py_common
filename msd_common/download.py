@@ -1,13 +1,13 @@
 from enum import Enum, auto
 from pathlib import Path
 
-from requests import Session
+from requests import Session, Response
 import requests
 
 from .url import name_from_url
 
 
-def _write_response_to_file(response: requests.Response, out_path: Path):
+def _write_response_to_file(response: Response, out_path: Path):
     with out_path.open("wb") as f:
         for chunk in response.iter_content(chunk_size=8192):
             # If you have chunk encoded response uncomment if
