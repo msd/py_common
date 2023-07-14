@@ -29,16 +29,20 @@ FF_HEADERS_SEC_FETCH_CROSS = {
     "Sec-Fetch-User": "?1",
 }
 
+
 try:
-    import requests
-
-    __REQUESTS_INSTALLED = True
+    import requests as _requests
 except ImportError:
-    __REQUESTS_INSTALLED = False
+    _requests = None
 
-if __REQUESTS_INSTALLED:
+if _requests is not None:
 
     def ff_session():
-        session = requests.session()
+        session = _requests.session()
         session.headers.update(FF_HEADERS)
         return session
+
+else:
+
+    def ff_session():
+        raise FileNotFoundError("requests library is not installed")
