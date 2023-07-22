@@ -7,7 +7,7 @@ import requests
 from .url import name_from_url
 
 
-def _write_response_to_file(response: Response, out_path: Path):
+def write_response_to_file(response: Response, out_path: Path):
     with out_path.open("wb") as f:
         for chunk in response.iter_content(chunk_size=8192):
             # If you have chunk encoded response uncomment if
@@ -55,5 +55,5 @@ def download_file(
 
     if out_path is not None:
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        _write_response_to_file(r, out_path)
+        write_response_to_file(r, out_path)
     return out_path
